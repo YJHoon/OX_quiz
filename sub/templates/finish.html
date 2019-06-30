@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <p align = "center">
+        <img style ="width : 400px; height: 400px;" src = "{% static 'lion.jpg' %}"><br>
+    </p>
+    <h1 align = "center">당신의 점수는 <big><big><big><big>{{score}}</big></big></big></big>점 입니다.</h1>
+    <br><br><br>
+
+
+
+    <script>
+    document.write( score )
+    </script>
+    
+   
+    <h3 align = "center" style = "font-family: 'BBTreeGB';"><a href="{% url 'main' %}">메인 화면</a></h3><br>
+    <h3 align = "center" style = "font-family: 'BBTreeGB';"><a href="{% url 'holy' %}">정답 보기</a></h3><br>
+
+{% endblock %}
+<style>
+    img{
+    background-image: url('../../ture/static/fin.jpg');
+    width : auto;
+    height: auto;
+    }
+</style>

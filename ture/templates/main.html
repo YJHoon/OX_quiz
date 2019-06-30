@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <p align = "center">
+        <img src = "{% static 'ox.jpg' %}">
+    </p>
+    <h1 align = "center" style = "font-family: Binggrae-Bold"> 상식 퀴즈</h1>
+    <br><br><br><br>
+    
+    <p align = "center">
+        <img style = "width:300px; height:200px;" src = "{% static 'start.jpg' %}">
+    <h3 style = "font-family: 'BBTreeGB';" align = "center"><a href="{% url 'first' %}" align="center">게임 시작</a></h3><br>
+    </p>
+{% endblock %}

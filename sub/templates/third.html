@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="card">
+        <img align = "center" src = "{% static 'head.jpg' %}">
+        <div class = "question">
+            <h1 align = "center">문제 3</h1>
+            <h3 align = "center">골치가 아프다 할 때 '골치'는 관자놀이를 뜻한다.</h3>
+        </div>
+        
+        <div style="position:center; bottom:0px;">
+            <form align = "center" action="{% url 'firth' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="score" value="{{score}}"/>
+                <input class="o" type="image" src="{% static 'o.jpg' %}" value="O"/>
+            </form>
+            <form align = "center" action="{% url 'firth' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="score" value="{{score|add:1}}"/>
+                <input class="x" type="image" src="{% static 'x.jpg' %}" value="X"/>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

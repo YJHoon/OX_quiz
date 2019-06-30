@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="card">
+    <img align="center" src = "{% static 'song.png' %}">
+
+    <div class = "question">
+        <h1 align = "center">문제 2</h1>
+        <h3 align = "center">세계에서 가장 많이 불리는 노래는 그 나라 국가이다.</h3>
+    </div>
+    
+    <div style="position:center; bottom:0px;">
+    
+        <form align = "center" action="{% url 'third' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="score" value="{{ score }}"/>
+            <input class="o" type="image" src="{% static 'o.jpg' %}" value="O"/>
+        </form>
+        <form align = "center" action="{% url 'third' %}" method="POST">
+            {% csrf_token %}
+            <input text-align="center" type="hidden" name="score" value="{{ score|add:1 }}"/>
+            <input class="x" type="image" src="{% static 'x.jpg' %}" value="X"/>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

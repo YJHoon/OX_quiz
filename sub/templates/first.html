@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class = "container">
+    <div class="card">
+        <img src = "{% static 'curry.jpg' %}">
+        
+        <div class = "question">
+            <h1 align = "center">문제 1</h1>
+            <h3 align = "center">카레는 인도어로 '맵다'라는 뜻이다.</h3>
+        </div>
+        
+        <div style="position:center; bottom:0px;">
+        
+            <form align = "center" action="{% url 'second' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="score" value="0"/>
+                <input class="o" type="image" src="{% static 'o.jpg' %}" value="O"/>
+            </form>
+            <form align = "center" action="{% url 'second' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="score" value="1"/>
+                <input class="x" type="image" src="{% static 'x.jpg' %}" value="X"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
